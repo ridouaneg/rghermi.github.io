@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "An artificial intelligence model predicts the survival of solid tumour patients from imaging and clinical data"
+date:   2022-10-01 22:21:59 +00:00
+image: /images/pulsai.jpg
+categories: research
+author: "Kathryn Schutte"
+authors: "Kathryn Schutte, Fabien Brulport, Sana Harguem-Zayani, Jean-Baptiste Schiratti, <strong>Ridouane Ghermi</strong>, Paul Jehanno, Alexandre Jaeger, Talal Alamri, Raphaël Naccache, Leila Haddag-Miliani, Teresa Orsi, Jean-Philippe Lamarque, Isaline Hoferer, Littisha Lawrance, Baya Benatsou, Imad Bousaid, Mikael Azoulay, Antoine Verdon, François Bidault, Corinne Balleyguier, Victor Aubert, Etienne Bendjebbar, Charles Maussion, Nicolas Loiseau, Benoît Schmauch, Meriem Sefta, Gilles Wainrib, Thomas Clozel, Samy Ammari, Nathalie Lassau"
+venue: "European Journal of Cancer"
+arxiv: https://www.sciencedirect.com/science/article/pii/S0959804922004075
+code: 
+website: 
+---

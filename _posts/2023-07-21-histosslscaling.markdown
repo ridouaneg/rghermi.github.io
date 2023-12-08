@@ -2,7 +2,7 @@
 layout: post
 title:  "Scaling Self-Supervised Learning for Histopathology with Masked Image Modeling"
 date:   2023-07-21 22:21:59 +00:00
-image: /images/histosslscaling.jpg
+image: /images/histosslscaling.png
 categories: research
 author: "Alexandre Filiot"
 authors: "Alexandre Filiot, <strong>Ridouane Ghermi</strong>, Antoine Olivier, Paul Jacob, Lucas Fidon, Alice Mac Kain, Charlie Saillard, Jean-Baptiste Schiratti"

@@ -9,6 +9,6 @@ authors: "<strong>Ridouane Ghermi</strong>, Xi Wang, Vicky Kalogeiton, Ivan Lapt
 venue: "arXiv"
 arxiv: https://arxiv.org/abs/2406.10221
 website: https://shortfilmdataset.github.io/
-code: https://github.com/shortfilmdataset/ShortFilmDataset
+code: https://github.com/ridouaneg/ShortFilmDataset
 dataset: https://huggingface.co/datasets/rghermi/sfd
 ---

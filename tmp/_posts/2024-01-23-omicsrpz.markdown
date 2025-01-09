@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Robust Evaluation of Deep Learning-based Representation Methods for Survival and Gene Essentiality Prediction on Bulk RNA-seq Data"
+date:   2024-01-23 22:21:59 +00:00
+image: /images/omicsrpz.png
+categories: research
+author: "Baptiste Gross"
+authors: "Baptiste Gross, Antonin Dauvin, Vincent Cabeli, Virgilio Kmetzsch, Jean El Khoury, Gaetan Dissez, Khalil Ouardini, Simon Grouard, Alec Davi, Regis Loeb, Christian Esposito, Louis Hulot, <strong>Ridouane Ghermi</strong>, Michael Blum, Yannis Darhi, Eric Y. Durand, Alberto Romagnoni"
+venue: "Nature Scientific Reports"
+paper: https://www.nature.com/articles/s41598-024-67023-8
+biorxiv: https://www.biorxiv.org/content/10.1101/2024.01.23.576852v1.abstract
+website: https://www.owkin.com/publications/robust-evaluation-of-deep-learning-based-representation-methods-for-survival-and-gene-essentiality-prediction-on-bulk-rna-seq-data
+---

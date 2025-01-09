@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Long Story Short: Story-level Video Understanding from 20K Short Films"
+date:   2024-06-14 22:21:59 +00:00
+image: /images/sf20k.png
+categories: research
+author: "Ridouane Ghermi"
+authors: "<strong>Ridouane Ghermi</strong>, Xi Wang, Vicky Kalogeiton, Ivan Laptev"
+venue: "arXiv"
+arxiv: https://arxiv.org/abs/2406.10221
+website: https://sf20k.github.io/
+code: https://github.com/ridouaneg/sf20k
+dataset: https://huggingface.co/datasets/rghermi/sf20k
+---

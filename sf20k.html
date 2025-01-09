@@ -1,9 +1,1060 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; URL=/sf20k/index.html" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SF20K </title>
+
+  <link rel="icon" href="./sf20k/static/images/sf20k.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./sf20k/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./sf20k/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./sf20k/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./sf20k/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./sf20k/static/css/index.css">
+  <link rel="stylesheet" href="./sf20k/static/css/leaderboard.css">
+  <link rel="stylesheet" href="./sf20k/static/css/video-player.css">
+
+  <script type="text/javascript" src="sf20k/static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./sf20k/static/js/fontawesome.all.min.js"></script>
+  <script src="./sf20k/static/js/bulma-carousel.min.js"></script>
+  <script src="./sf20k/static/js/bulma-slider.min.js"></script>
+  <script src="./sf20k/static/js/explorer-index.js"></script>
+  <script src="./sf20k/static/js/question_card.js"></script>
+
+  <script src="./sf20k/static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+  </style>
+
 </head>
 <body>
-    <p>Redirecting to <a href="/sf20k/index.html">/sf20k/index.html</a></p>
+
+  
+<!--
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
+            <b>MME</b> 
+          </a>
+          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
+            <b>Awesome-MLLM</b> 
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+-->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <!-- <img src="sf20k/static/images/video-mme.png" style="width:1.6em;vertical-align: middle" alt="Logo"/> -->
+            <span class="video-mme" style="vertical-align: middle">Short-Films 20K (SF20K)</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
+            Story-level Video Understanding from 20K Short Films
+          </h2>
+          
+          <div class="is-size-5 publication-authors", style="width: 80%; margin: 20px auto;", >
+            <span class="author-block", style="font-size:24px"><a href="https://ridouaneg.github.io/">Ridouane Ghermi,</a></span>
+            <span class="author-block", style="font-size:24px"><a href="https://triocrossing.github.io/">Xi Wang,</a></span>
+            <span class="author-block", style="font-size:24px"><a href="https://vicky.kalogeiton.info/">Vicky Kalogeiton,</a></span>
+            <span class="author-block", style="font-size:24px"><a href="https://www.di.ens.fr/~laptev/">Ivan Laptev</a></span>
+
+        </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>LIX, Ecole Polytechnique, IP Paris,</span>
+            <span class="author-block"><sup>2</sup>MBZUAI</span><br>
+            <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>LIX, Ecole Polytechnique, IP Paris,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>MBZUAI</span><br> -->
+            <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2406.10221"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiV Link.-->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.10221"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ridouaneg/sf20k"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/rghermi/sf20k"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> 
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Recent advances in vision-language models have significantly propelled video understanding. Existing datasets and tasks, however, have notable limitations. 
+          Most datasets are confined to short videos with limited events and narrow narratives. 
+          For example, datasets with instructional and egocentric videos often document activities of one person in a single scene. 
+          Although some movie datasets offer richer content, they are often limited to short-term tasks, lack publicly available videos, and frequently encounter <em>data leakage</em> given the use of subtitles and other information about commercial movies in LLM training. 
+          To address the above limitations, we propose Short-Films 20K (SF20K), a first large-scale open dataset for story-level video understanding. 
+          SF20K is composed of 20,143 publicly available amateur movies and offers long-term  video tasks in the form of multiple-choice and open-ended question answering. 
+          Our extensive analysis of SF20K reveals minimal data leakage, emphasizes the need for long-term reasoning, and demonstrates strong performance of recent LLMs. 
+          In turn, we show significantly lower performance of current vision models compared to people when using vision data alone. 
+          Finally, we show that instruction-tuning on the SF20K-Train set improves performance, especially in the vision-only setting, paving the way for future progress of long-term video models.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
+  }
+</script>
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+
+        <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+        <div class="content">
+          <!-- <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos, taking the corresponding subtitles as input or not.</p> -->
+          <div class="video-duration">
+            <p>
+              <strong>MCQA:</strong> Multiple-choice question answering  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <strong>OEQA:</strong> Open-ended question answering
+            </p>
+            <p>
+              <strong>V:</strong> Vision-only (video frames)  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <strong>L:</strong> Language-only (subtitles)  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <strong>VL:</strong> Vision-language (video frames + subtitles)
+            </p>
+            <!--
+            <p>
+              By default, this leaderboard is sorted by vision-language performances in the open-ended QA setting. To view other sorted results, please click on the corresponding cell.
+            </p>
+            -->
+          </div>
+
+          <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+            <thead>
+              <tr>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>#</strong></th>
+                <th rowspan="2" style="vertical-align: middle; width: 180px;" data-js-sort-colNum="1" class="js-sort-model"><strong>Model</strong></th>
+                <th rowspan="2" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="2" class="js-sort-string"><strong>#Params</strong></th>
+                <th colspan="3" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="5" class="js-sort-number"><strong>MCQA</strong></th>
+                <th colspan="3" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="8" class="js-sort-number"><strong>OEQA</strong></th>
+              </tr>
+              <tr>
+                <th data-js-sort-colNum="3" class="js-sort-number"><strong>V</strong></th>
+                <th data-js-sort-colNum="4" class="js-sort-number"><strong>L</strong></th>
+                <th data-js-sort-colNum="5" class="js-sort-number"><strong>VL</strong></th>
+                <th data-js-sort-colNum="6" class="js-sort-number"><strong>V</strong></th>
+                <th data-js-sort-colNum="7" class="js-sort-number"><strong>L</strong></th>
+                <th data-js-sort-colNum="8" class="js-sort-number"><strong>VL</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b>
+                    <a href="https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-mini</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">79.4</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">60.0</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2410.07073" class="ext-link" style="font-size: 16px; margin-left: 5px;">Pixtral</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">12B</td>
+                <td style="vertical-align: middle;">38.5</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">74.4</td>
+                <td style="vertical-align: middle;">29.5</td>
+                <td style="vertical-align: middle;">49.4</td>
+                <td style="vertical-align: middle;">49.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llama-3.2-Vision</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">11B</td>
+                <td style="vertical-align: middle;">57.9</td>
+                <td style="vertical-align: middle;">72.3</td>
+                <td style="vertical-align: middle;">75.0</td>
+                <td style="vertical-align: middle;">24.4</td>
+                <td style="vertical-align: middle;">45.2</td>
+                <td style="vertical-align: middle;">47.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://llava-vl.github.io/blog/2024-04-30-llava-next-video/" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-Next-Video</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32.8</td>
+                <td style="vertical-align: middle;">52.3</td>
+                <td style="vertical-align: middle;">64.2</td>
+                <td style="vertical-align: middle;">27.4</td>
+                <td style="vertical-align: middle;">42.2</td>
+                <td style="vertical-align: middle;">42.7</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2408.03326" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-OneVision</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">63.2</td>
+                <td style="vertical-align: middle;">74.7</td>
+                <td style="vertical-align: middle;">78.2</td>
+                <td style="vertical-align: middle;">25.1</td>
+                <td style="vertical-align: middle;">35.3</td>
+                <td style="vertical-align: middle;">37.7</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b>
+                    <a href="https://arxiv.org/pdf/2406.16852" class="ext-link" style="font-size: 16px; margin-left: 5px;">LongVA</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">58.5</td>
+                <td style="vertical-align: middle;">73.8</td>
+                <td style="vertical-align: middle;">70.0</td>
+                <td style="vertical-align: middle;">26.3</td>
+                <td style="vertical-align: middle;">51.7</td>
+                <td style="vertical-align: middle;">36.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b>
+                    <a href="https://arxiv.org/pdf/2409.02889" class="ext-link" style="font-size: 16px; margin-left: 5px;">Long-LLaVA</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">52.1</td>
+                <td style="vertical-align: middle;">70.4</td>
+                <td style="vertical-align: middle;">72.6</td>
+                <td style="vertical-align: middle;">17.4</td>
+                <td style="vertical-align: middle;">36.7</td>
+                <td style="vertical-align: middle;">33.5</td>
+              </tr>
+              
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2408.03326" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-OneVision</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">0.5B</td>
+                <td style="vertical-align: middle;">29.2</td>
+                <td style="vertical-align: middle;">35.4</td>
+                <td style="vertical-align: middle;">37.8</td>
+                <td style="vertical-align: middle;">14.3</td>
+                <td style="vertical-align: middle;">20.2</td>
+                <td style="vertical-align: middle;">22.6</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2307.16449" class="ext-link" style="font-size: 16px; margin-left: 5px;">MovieChat</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">8.4</td>
+                <td style="vertical-align: middle;">6.4</td>
+                <td style="vertical-align: middle;">8.0</td>
+                <td style="vertical-align: middle;">14.0</td>
+                <td style="vertical-align: middle;">15.7</td>
+                <td style="vertical-align: middle;">11.8</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b>
+                    <a href="https://arxiv.org/pdf/2311.10122" class="ext-link" style="font-size: 16px; margin-left: 5px;">Video-LLaVA</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">32.4</td>
+                <td style="vertical-align: middle;">21.3</td>
+                <td style="vertical-align: middle;">45.7</td>
+                <td style="vertical-align: middle;">8.4</td>
+                <td style="vertical-align: middle;">10.6</td>
+                <td style="vertical-align: middle;">8.2</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2312.02051" class="ext-link" style="font-size: 16px; margin-left: 5px;">TimeChat</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">25.5</td>
+                <td style="vertical-align: middle;">6.4</td>
+                <td style="vertical-align: middle;">31.8</td>
+                <td style="vertical-align: middle;">26.4</td>
+                <td style="vertical-align: middle;">9.4</td>
+                <td style="vertical-align: middle;">5.9</td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2311.04257" class="ext-link" style="font-size: 16px; margin-left: 5px;">mPLUG-Owl2</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;">38.3</td>
+                <td style="vertical-align: middle;">20.7</td>
+                <td style="vertical-align: middle;">21.3</td>
+                <td style="vertical-align: middle;">22.1</td>
+                <td style="vertical-align: middle;">1.8</td>
+                <td style="vertical-align: middle;">1.6</td>                                 
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left;">
+                  <b class="">
+                    <a href="https://arxiv.org/pdf/2206.08155" class="ext-link" style="font-size: 16px; margin-left: 5px;">FrozenBiLM</a>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">0.5B</td>
+                <td style="vertical-align: middle;">23.4</td>
+                <td style="vertical-align: middle;">38.2</td>
+                <td style="vertical-align: middle;">38.6</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;">-</td>
+              </tr>
+              
+              <!--
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-OneVision</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4V</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-1.5-Flash</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini-1.5-Pro</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen2-VL</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Pixtral</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Mistral AI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">120B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llama-3.2-Vision</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Meta AI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">90B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-Video</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Llava-Video</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">Claude 3.5 Sonnet</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Anthropic</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">-</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">VideoLlama2</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">7B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <a href="" class="ext-link" style="font-size: 16px; margin-left: 5px;">VideoLlama2</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">72B</td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+                <td style="vertical-align: middle;"></td>
+              </tr>
+
+              -->
+  
+          </tbody>                                                   
+        </table> 
+        
+        <!--
+        <p style="margin-top: -20px;">
+          <strong style="color: #22a56e; font-size: 18px;" >Green date</strong> indicates the newly added/updated models  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          - indicates closed-source models
+        </p>
+
+        <p style=" text-align: left;">
+          1* The short and medium videos are sampled at 1 fps, while the long videos are sampled at 0.5 fps to ensure the stability of the API.
+          </br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384 seconds, we extract 384 frames uniformly. All the frames are resized to 512x512 resolution to fit within GPT-4o’s max context length.
+          </br>3* The videos are sampled at 2 fps, and the upper limit is 768 frames.
+        </p>
+        -->
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-2 mathvista_other">Dataset & Benchmark</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Dataset Examples</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="content has-text-centered">
+            <img src="sf20k/static/images/samples/sample1.png" alt="geometric reasoning" width="84%"/>
+            <p style="margin-bottom: 30px;">Video Link:&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=Gi__cddQCNU">https://www.youtube.com/watch?v=Gi__cddQCNU</a></p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="sf20k/static/images/samples/sample2.png" alt="geometric reasoning" width="84%"/>
+            <p style="margin-bottom: 30px;">Video Link:&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=qEaoaRpRRzo">https://www.youtube.com/watch?v=qEaoaRpRRzo</a></p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="sf20k/static/images/samples/sample3.png" alt="geometric reasoning" width="84%"/>
+            <p style="margin-bottom: 30px;">Video Link:&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=05-CLtrWn38">https://www.youtube.com/watch?v=05-CLtrWn38</a></p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="sf20k/static/images/samples/sample4.png" alt="geometric reasoning" width="84%"/>
+            <p style="margin-bottom: 30px;">Video Link:&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=7mSH86O2qzA">https://www.youtube.com/watch?v=7mSH86O2qzA</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Dataset Statistics</h2>
+
+        <div class="content has-text-centered is-flex is-justify-content-center is-align-items-center">
+          <figure class="image">
+            <img src="sf20k/static/images/dataset_statistics.png" alt="grade-lv" style="width:70%;" />
+            <figcaption class="has-text-centered mt-2">
+              <p><strong>Overall Statistics of SF20K</strong></p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <div class="columns is-vcentered">
+              <div class="column is-half">
+                <img src="sf20k/static/images/subset_stats.png" alt="grade-lv" style="width:100%;"/>
+              </div>
+              <div class="column is-half has-text-justified">
+                <p>
+                  <strong>Detailed statistics of each SF20K subset:</strong>
+                  <ul style="list-style-type: none; padding: 0;">
+                    <li>- <b>SF20K:</b> The full dataset, containing both training and test sets.</li>
+                    <li>- <b>SF20K-Test:</b> The test benchmark, featuring manually curated questions generated from movie synopses.</li>
+                    <li>- <b>SF20K-Test-Silent:</b> A subset of SF20K-Test focused exclusively on silent movies.</li>
+                    <li>- <b>SF20K-Test-Expert:</b> A subset of SF20K-Test with manually crafted, challenging questions.</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Word Cloud Analysis</h2>
+        
+        <div class="content has-text-centered is-flex is-justify-content-center is-align-items-center">
+          <figure class="image">
+            <img src="sf20k/static/images/word_clouds.png" alt="grade-lv" style="width:100%;" />
+            <figcaption class="has-text-centered mt-2">
+              Comparative word cloud analysis across three video domains: movies (SF20K-test), instructional videos (iVQA), and egocentric videos (EgoSchema).
+           </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Comparison to other datasets</h2>
+        <div class="content has-text-centered is-flex is-justify-content-center is-align-items-center">
+          <figure class="image">
+            <img src="sf20k/static/images/dataset_comparison.png" alt="grade-lv" style="width:80%;" />
+            <figcaption class="has-text-centered mt-2">
+              Comparison of SF20K with other video question answering datasets.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-2 mathvista_other">Experimental Results</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Data Leakage</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <img src="sf20k/static/images/data_leakage_adv.png" class="image-left" width="80%"/>
+          </div>
+          <div class="column is-half has-text-justified">
+            <p>
+              Modern LLMs, pre-trained on vast internet data, often encounter <b>data leakage</b>—memorizing movie-related information 
+              like synopses, reviews, and scripts instead of analyzing video content. For example, using only the movie title, 
+              <b>GPT-4 achieves 76.0% accuracy on MovieQA and 71.2% on LVU but only 36.0% on SF20K-Test</b>, which focuses on amateur 
+              films with minimal online presence. This makes SF20K-Test a more reliable benchmark for long-term video understanding, 
+              as it minimizes biases caused by pretraining exposure. Additionally, leakage severity correlates with model size, 
+              with larger LLMs showing higher memorization on commercial datasets, while SF20K-Test remains unaffected, with 
+              accuracies consistently low across models.
+            </p>
+          </div>
+        </div>      
+      </div>
+    </div>
+
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div class="columns is-vcentered">
+          <div class="column is-half has-text-justified">
+            <p>
+              <b>(i) Anonymization:</b> We test GPT-4 in three settings: with movie titles, without titles, and with anonymized questions (hiding character names). For MovieQA, removing titles drops performance by 17.4%, and full anonymization reduces it by 39.9%. In contrast, SF20K-Test remains stable, showing that LLMs rely on title recognition for commercial movies but not amateur films.
+            </p>
+          </div>
+          <div class="column is-half">
+            <img src="sf20k/static/images/data_leakage_anon.png" class="image-left" width="80%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <img src="sf20k/static/images/data_leakage_swap.png" class="image-left" width="80%"/>
+          </div>
+          <div class="column is-half has-text-justified">
+            <p>
+              <b>(ii) Shuffling:</b> Replacing movie titles with random ones significantly drops accuracy for MovieQA, even below anonymized levels, showing reliance on title recognition. For SF20K-Test, performance remains unaffected, as LLMs do not recognize amateur films in either cases.
+            </p>
+          </div>
+        </div>      
+      </div>
+    </div>
+
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Baselines Performance</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-half has-text-justified">
+            <p>
+              We evaluate VLMs on SF20K-Test in a zero-shot video question-answering setting, incorporating subtitles and video frames. Models are tested across three modalities: <b>Vision-Only (V)</b>, <b>Language-Only (L)</b>, and <b>Vision-Language (VL)</b>.
+              <ul>
+                <li><b>Multiple-Choice QA (MCQA):</b> GPT-4o-mini achieves the highest accuracy (79.4%), approaching human performance (89.8%), while recent open-source models (e.g. Llava-OneVision-7B) closes the gap, following by just 1.2 percentage points.</li>
+                <li><b>Open-Ended QA (OEQA):</b> This task proves more challenging, with performances ranging from 1.6% to 60.0%. GPT-4o-mini leads again, while open-source models like Pixtral-12B achieve only 49.8%.</li>
+                <li><b>Modality Analysis:</b> Multimodal performance consistently surpasses unimodal, but subtitles dominate, with smaller gaps between language-only and multimodal settings compared to vision-only settings.</li>
+              </ul>
+            </p>
+          </div>
+          <div class="column is-half">
+            <img src="sf20k/static/images/baselines.png" class="image-left" width="80%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <img src="sf20k/static/images/baselines_subsets.png" class="image-left" width="80%"/>
+          </div>
+          <div class="column is-half has-text-justified">
+            <p>
+              We evaluate VLMs on <b>SF20K-Test-Silent</b> (silent movies) and <b>SF20K-Test-Expert</b> (manually-crafted challenging questions) in an open-ended QA setting.
+              <ul>
+                <li><b>SF20K-Test-Silent:</b> Models show a significant accuracy drop, not exceeding 29.0%, compared to 49.8% on the full SF20K-Test.</li>
+                <li><b>SF20K-Test-Expert:</b> Similarly, performence declines sharply, leaving rooms for improvement for future methods.</li>
+              </ul>
+            </p>
+          </div>
+        </div>      
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4">Temporal Window Study</h2>
+          <div class="content has-text-centered">
+            <img src="sf20k/static/images/temporal_window_study.png" alt="grade-lv" width="80%"/>
+          </div>
+          <div class="column is-full has-text-justified">
+            <p>
+              We confirm the need for long-form video understanding through a temporal window study at shot-, scene-, and movie-level, 
+              using FrozenBiLM and LLoVi for MCQA. Shots average 5.52 seconds, scenes aggregate 10 shots, and movies use full videos. 
+              Results show that larger temporal windows improve performance: LLoVi's language-only accuracy rises from 38.5% (shot-level) 
+              to 64.2% (movie-level), while FrozenBiLM gains 7.3%. These findings emphasize the long-term nature of SF20K-Test's story-level tasks.
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+
+        <h2 class="title is-4">Instruction Tuning</h2>
+
+        <div class="column">
+          <figure>
+            <img src="sf20k/static/images/instruction_tuning.png" class="image-left" style="width:70%;"/>
+            <figcaption>Performance of Llava-OneVision-0.5B fine-tuned on SF20K-Train and evaluated on SF20K-Test.</figcaption>
+          </figure>
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column is-half has-text-justified">
+            <p>
+              <b>Fine-tuning results of Llava-OneVision-0.5B on SF20K-Train (top):</b>
+              <ul>
+                <li><b>Multiple-Choice QA (MCQA):</b> Performance improves significantly by 25.2%, reducing the gap with its 7B counterparts.</li>
+                <li><b>Open-Ended QA (OEQA):</b> Improvement is more modest (+4.0%), but still meaningful.</li>
+                <li><b>Vision-Only (V):</b> In both settings, the visual modality benefits from instruction tuning, despite instruction data being generated from subtitles.</li>
+              </ul>
+              <b>Effect of the training size (right):</b> When fine-tuning with varying numbers of videos, we observe logarithmic improvements of performance, from 46.5% to 63.0%.
+            </p>
+          </div>
+          <div class="column is-half">
+            <img src="sf20k/static/images/instruction_tuning_size.png" class="image-left" width="80%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+      @misc{ghermi2024shortfilmdatasetsfd,
+        title={Long Story Short: Story-level Video Understanding from 20K Short Films}, 
+        author={Ridouane Ghermi and Xi Wang and Vicky Kalogeiton and Ivan Laptev},
+        journal={arXiv preprint arXiv:2406.10221},
+        year={2024},
+      }
+</code></pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384;
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://video-mme.github.io/">Video-MME</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
 </body>
 </html>
+

@@ -6,9 +6,7 @@
   <title> SF20K </title>
 
   <link rel="icon" href="./sf20k/static/images/sf20k.png">
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
   <link rel="stylesheet" href="./sf20k/static/css/bulma.min.css">
   <link rel="stylesheet" href="./sf20k/static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./sf20k/static/css/bulma-slider.min.css">
@@ -19,19 +17,13 @@
   <link rel="stylesheet" href="./sf20k/static/css/video-player.css">
 
   <script type="text/javascript" src="sf20k/static/js/sort-table.js" defer></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./sf20k/static/js/fontawesome.all.min.js"></script>
   <script src="./sf20k/static/js/bulma-carousel.min.js"></script>
   <script src="./sf20k/static/js/bulma-slider.min.js"></script>
   <script src="./sf20k/static/js/explorer-index.js"></script>
   <script src="./sf20k/static/js/question_card.js"></script>
-
   <script src="./sf20k/static/js/leaderboard_testmini.js"></script>  
-  <script src="./data/results/output_folders.js" defer></script>
-  <script src="./data/results/model_scores.js" defer></script>
-
-  <script src="./visualizer/data/data_public.js" defer></script>
 
   <style>
     .no-sort {
@@ -44,47 +36,12 @@
 </head>
 <body>
 
-  
-<!--
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
-            <b>MME</b> 
-          </a>
-          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
-            <b>Awesome-MLLM</b> 
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
--->
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
-            <!-- <img src="sf20k/static/images/video-mme.png" style="width:1.6em;vertical-align: middle" alt="Logo"/> -->
             <span class="video-mme" style="vertical-align: middle">Short-Films 20K (SF20K)</span>
             </h1>
           <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
@@ -214,7 +171,6 @@
 
         <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
         <div class="content">
-          <!-- <p class="mt-3">Accuracy scores on Video-MME are presented for short, medium, and long videos, taking the corresponding subtitles as input or not.</p> -->
           <div class="video-duration">
             <p>
               <strong>MCQA:</strong> Multiple-choice question answering  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -225,11 +181,6 @@
               <strong>L:</strong> Language-only (subtitles)  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <strong>VL:</strong> Vision-language (video frames + subtitles)
             </p>
-            <!--
-            <p>
-              By default, this leaderboard is sorted by vision-language performances in the open-ended QA setting. To view other sorted results, please click on the corresponding cell.
-            </p>
-            -->
           </div>
 
           <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
@@ -718,25 +669,10 @@
   
           </tbody>                                                   
         </table> 
-        
-        <!--
-        <p style="margin-top: -20px;">
-          <strong style="color: #22a56e; font-size: 18px;" >Green date</strong> indicates the newly added/updated models  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          - indicates closed-source models
-        </p>
-
-        <p style=" text-align: left;">
-          1* The short and medium videos are sampled at 1 fps, while the long videos are sampled at 0.5 fps to ensure the stability of the API.
-          </br>2* The videos less than 384 seconds are sampled at 1 fps, and for those longer than 384 seconds, we extract 384 frames uniformly. All the frames are resized to 512x512 resolution to fit within GPT-4o’s max context length.
-          </br>3* The videos are sampled at 2 fps, and the upper limit is 768 frames.
-        </p>
-        -->
 
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1040,7 +976,6 @@
 
 
 <footer class="footer">
-  <!-- <div class="container"> -->
     <div class="content has-text-centered">
     </div>
     <div class="columns is-centered">
@@ -1052,7 +987,6 @@
         </div>
       </div>
     </div>
-  <!-- </div> -->
 </footer>
 
 </body>
